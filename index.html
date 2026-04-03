@@ -201,7 +201,7 @@ footer{background:var(--gd);color:rgba(255,255,255,.7);text-align:center;padding
     <div class="hero-stat"><div class="val">8—10 人/场</div><div class="lbl">满8人开班</div></div>
     <div class="hero-stat"><div class="val">¥98/人</div><div class="lbl">美团平台下单</div></div>
   </div>
-  <button class="hero-cta" onclick="document.getElementById('scene').scrollIntoView({behavior:'smooth'})">查看完整活动方案 ↓</button>
+  <button class="hero-cta" id="hero-cta-btn">查看完整活动方案 ↓</button>
 </section>
 
 <!-- 第一章：软装场景 -->
@@ -810,6 +810,15 @@ document.querySelectorAll('nav a').forEach(a => {
     }
   });
 });
+
+// 查看完整活动方案按钮
+var ctaBtn = document.getElementById('hero-cta-btn');
+if(ctaBtn) {
+  ctaBtn.addEventListener('click', function() {
+    var target = document.getElementById('scene');
+    if(target) { target.scrollIntoView({behavior:'smooth'}); }
+  });
+}
 </script>
 </body>
 </html>
